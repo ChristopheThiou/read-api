@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Movie } from '../entities';
 import { MovieServiceService } from '../movie-service.service';
 
@@ -8,10 +8,10 @@ import { MovieServiceService } from '../movie-service.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   movie:Movie[] = [];
   constructor(private service:MovieServiceService){}
-  getData(){
+  ngOnInit(): void {
     this.service.fetchAll()
     .subscribe(data => this.movie = data)
   }
