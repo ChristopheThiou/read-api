@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { HomeComponent } from './home/home.component';
+import { FormMovieComponent } from './form-movie/form-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieItemComponent,
-    HomeComponent
+    HomeComponent,
+    FormMovieComponent
   ],
   imports: [
     BrowserModule,

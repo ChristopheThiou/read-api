@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" [(ngModel)]="movie.title">
+    </div>
+    <div>
+        <label for="resume">Resume</label>
+        <input type="text" name="resume" [(ngModel)]="movie.resume">
+    </div>
+    <div>
+        <label for="released">Released</label>
+        <input type="text" name="released" [(ngModel)]="movie.released">
+    </div>
+    <div>
+        <label for="duration">Duration</label>
+        <input type="number" name="duration" [(ngModel)]="movie.duration">
+    </div>
+    <button>Publish</button>
+</form>

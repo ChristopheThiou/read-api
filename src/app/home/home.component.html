@@ -1,2 +1,3 @@
 <H1>Movies list</H1>
 <app-movie-item [movie]="item" *ngFor="let item of movie"></app-movie-item>
+<app-form-movie (formSubmit)="handleSubmit($event)"></app-form-movie>

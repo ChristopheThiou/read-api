@@ -11,4 +11,7 @@ export class MovieServiceService {
   fetchAll(){
     return this.http.get<Movie[]>('http://127.0.0.1:8000/api/movie');
   }
+  add(movie:Movie){
+    return this.http.post<Movie>('http://127.0.0.1:8000/api/movie', movie);
+  }
 }
