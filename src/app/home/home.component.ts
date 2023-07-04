@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
     this.service.fetchAll().subscribe((data) => (this.movie = data));
   }
   handleSubmit(movie:Movie){
-    this.service.add(movie).subscribe((data) => (movie = data));
-    this.movie.push(movie);
+    this.service.add(movie).subscribe((data) => (this.movie.push(data)));
   }
 }
