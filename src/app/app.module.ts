@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { HomeComponent } from './home/home.component';
 import { FormMovieComponent } from './form-movie/form-movie.component';
+import { SingleMovieComponent } from './single-movie/single-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieItemComponent,
     HomeComponent,
-    FormMovieComponent
+    FormMovieComponent,
+    SingleMovieComponent
   ],
   imports: [
     BrowserModule,

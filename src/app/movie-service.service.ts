@@ -17,4 +17,7 @@ export class MovieServiceService {
   delete(id:number){
     return this.http.delete<void>('http://127.0.0.1:8000/api/movie/'+id)
   }
+  fetchOne(id:any){
+    return this.http.get<Movie>('http://127.0.0.1:8000/api/movie/'+id);
+  }
 }
