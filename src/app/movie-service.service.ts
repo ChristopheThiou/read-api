@@ -14,4 +14,7 @@ export class MovieServiceService {
   add(movie:Movie){
     return this.http.post<Movie>('http://127.0.0.1:8000/api/movie', movie);
   }
+  delete(id:number){
+    return this.http.delete<void>('http://127.0.0.1:8000/api/movie/'+id)
+  }
 }
