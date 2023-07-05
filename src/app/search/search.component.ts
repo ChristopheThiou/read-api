@@ -11,9 +11,11 @@ export class SearchComponent {
   term = '';
   result: Movie[] = [];
   constructor(private service: MovieServiceService) {}
-  doSearch(term:string){
-    {
-      this.service.search(term).subscribe((data => this.result = data));
+  doSearch(){
+    if (this.term.length < 2) {
+      this.result = [];
+    }else{
+      this.service.search(this.term).subscribe((data => this.result = data));
     }
   }
 }
