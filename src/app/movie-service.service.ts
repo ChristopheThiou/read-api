@@ -23,4 +23,7 @@ export class MovieServiceService {
   update(movie:Movie){
     return this.http.patch<Movie>('http://127.0.0.1:8000/api/movie/'+movie.id, movie)
   }
+  search(term:string){
+    return this.http.get<Movie[]>('http://127.0.0.1:8000/api/movie/search/'+term);
+  }
 }

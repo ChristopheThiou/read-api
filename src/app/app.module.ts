@@ -9,6 +9,7 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 import { HomeComponent } from './home/home.component';
 import { FormMovieComponent } from './form-movie/form-movie.component';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SingleMovieComponent } from './single-movie/single-movie.component';
     MovieItemComponent,
     HomeComponent,
     FormMovieComponent,
-    SingleMovieComponent
+    SingleMovieComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
