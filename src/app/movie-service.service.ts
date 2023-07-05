@@ -20,4 +20,7 @@ export class MovieServiceService {
   fetchOne(id:any){
     return this.http.get<Movie>('http://127.0.0.1:8000/api/movie/'+id);
   }
+  update(movie:Movie){
+    return this.http.patch<Movie>('http://127.0.0.1:8000/api/movie/'+movie.id, movie)
+  }
 }

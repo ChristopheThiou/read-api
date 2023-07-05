@@ -6,12 +6,22 @@ import { MovieServiceService } from '../movie-service.service';
 @Component({
   selector: 'app-single-movie',
   templateUrl: './single-movie.component.html',
-  styleUrls: ['./single-movie.component.css']
+  styleUrls: ['./single-movie.component.css'],
 })
 export class SingleMovieComponent implements OnInit {
-  movie:Movie = {title: '', duration: 0, released: '', resume: '' };
-  constructor(private route:ActivatedRoute, private service:MovieServiceService){}
+  movie: Movie;
+  constructor(
+    private route: ActivatedRoute,
+    private service: MovieServiceService
+  ) {}
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.service.fetchOne(params['id']).subscribe(data => this.movie = data));
+    this.route.params.subscribe((params) =>
+      this.service
+        .fetchOne(params['id'])
+        .subscribe((data) => (this.movie = data))
+    );
+  }
+  updateMovie(movie:Movie){
+    this.service.update(movie).subscribe((data) => data);
   }
 }

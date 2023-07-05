@@ -1,6 +1,11 @@
-<article>
-    <h2>{{movie.title}}</h2>
-    <p>Released date :{{movie.released|date}}</p>
-    <p>Resume : {{movie.resume}}</p>
-    <p>Duration : {{movie.duration}}</p>
-</article>
+<div *ngIf="movie">
+  <article >
+    <h2>{{ movie.title }}</h2>
+    <p>Released date :{{ movie.released | date }}</p>
+    <p>Resume : {{ movie.resume }}</p>
+    <p>Duration : {{ movie.duration }}</p>
+  </article>
+  <app-form-movie [movie]="movie" (formSubmit)="updateMovie($event)"/>
+</div>
+
+<div *ngIf="!movie">loading...</div>
