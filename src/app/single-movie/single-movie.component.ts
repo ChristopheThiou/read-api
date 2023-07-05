@@ -10,6 +10,7 @@ import { MovieServiceService } from '../movie-service.service';
 })
 export class SingleMovieComponent implements OnInit {
   movie: Movie;
+  editing = false;
   constructor(
     private route: ActivatedRoute,
     private service: MovieServiceService
@@ -21,7 +22,10 @@ export class SingleMovieComponent implements OnInit {
         .subscribe((data) => (this.movie = data))
     );
   }
-  updateMovie(movie:Movie){
-    this.service.update(movie).subscribe((data) => data);
+  updateMovie(movie: Movie) {
+    this.service.update(movie).subscribe((data) => {
+      this.movie = data;
+      this.editing = false;
+    });
   }
 }
